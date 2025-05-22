@@ -21,3 +21,12 @@ export function setClick(selector, callback) {
   });
   qs(selector).addEventListener("click", callback);
 }
+//Get the code of the of the product from the url
+export function getParam(param){
+  const queryString = window.location.search;
+  console.log(queryString)
+  const urlParams = new URLSearchParams(queryString);
+  const product = urlParams.get(param)
+  console.log(product)
+  return product
+}
